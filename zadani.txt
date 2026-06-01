@@ -1,0 +1,10 @@
+﻿Popis: 
+
+    Nařezat web s využitím bootstrap frameworku přes sass
+    https://marketplace.visualstudio.com/items?itemName=glenn2223.live-sass 
+    https://getbootstrap.com/docs/4.6/getting-started/download/
+        https://github.com/twbs/bootstrap/archive/v4.6.2.zip 
+    Nasadit ikony podobné grafice přes 
+        https://fontawesome.com/icons 
+    Doplnit webfont
+        https://fonts.google.com/specimen/Nunito+Sans 

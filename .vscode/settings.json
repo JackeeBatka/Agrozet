@@ -1,0 +1,14 @@
+{
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "/css"
+        }
+    ],
+    "liveSassCompile.settings.excludeList": [
+        "**/bootstrap-4.6.2/**",
+        "**/node_modules/**"
+    ],
+    "liveSassCompile.settings.generateMap": true
+}

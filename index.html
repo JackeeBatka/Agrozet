@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrozet – Zemědělské stroje a díly</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="bootstrap-4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ============================================================
+         TOPBAR – tenký žlutý pruh nahoře
+    ============================================================ -->
+    <div class="topbar">
+        <div class="container">
+            <ul class="topbar__links list-inline mb-0 text-left">
+                <li class="list-inline-item"><a href="#">Články</a></li>
+                <li class="list-inline-item"><a href="#">Videa</a></li>
+                <li class="list-inline-item"><a href="#"><strong>Speciální nabídky</strong></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         HEADER – logo, vyhledávání, login, košíka
+    ============================================================ -->
+    <header class="site-header">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <!-- Logo -->
+                <div class="col-6 col-lg-auto">
+                    <a href="index.html" class="site-header__logo">
+                        <img class="logo-img" src="./img/Logo.svg" alt="Agrozet_logo">
+                    </a>
+                </div>
+
+                <!-- Login + košík (na mobilu vpravo nahoře) -->
+                <div class="col-6 col-lg-auto order-lg-3 text-right">
+                    <a href="#" class="site-header__icon">
+                        <i class="far fa-user"></i>
+                        <span class="d-none d-md-inline">Login</span>
+                    </a>
+                    <a href="#" class="site-header__icon ml-3">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>0 Kč</span>
+                    </a>
+                </div>
+
+                <!-- Vyhledávání -->
+                <div class="col-12 col-lg order-lg-2 mt-3 mt-lg-0">
+                    <form class="site-header__search" action="#" method="get">
+                        <input type="search" name="q" class="form-control" placeholder="Vyhledávání">
+                        <button type="submit" class="btn btn-secondary">
+                            <span class="d-none d-sm-inline">Hledat</span>
+                            <i class="fas fa-search d-sm-none"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================================
+         HLAVNÍ NAVIGACE
+    ============================================================ -->
+    <nav class="navbar navbar-expand-lg navbar-dark site-nav">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-label="Otevřít menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <!-- pouzivam faS protoze velka cast tech ikon nema free faR verzi -->
+                            <span class="site-nav__bullet"><i class="fas fa-info"></i></span>
+                            O nás
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span class="site-nav__bullet"><i class="fas fa-tractor"></i></span>
+                            Technika
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span class="site-nav__bullet"><i class="fas fa-gear"></i></span>
+                            Náhradní díly
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span class="site-nav__bullet"><i class="fas fa-tags"></i></span>
+                            Agrobazar
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span class="site-nav__bullet"><i class="fas fa-wrench"></i></span>
+                            Služby
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span class="site-nav__bullet"><i class="fas fa-shopping-cart"></i></span>
+                            E-shop
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kontakty">
+                            <span class="site-nav__bullet"><i class="fas fa-phone"></i></span>
+                            Kontakty
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================================
+         HERO – banner s nabídkou
+    ============================================================ -->
+    <section class="hero">
+        <div class="hero__bg">
+            <div class="container">
+                <div class="hero__inner">
+                    <div class="hero__panel">
+                        <h1 class="hero__title">MERGENTO VT 9220</h1>
+                        <p class="hero__subtitle">Kvalita krmiva začíná u sklizně</p>
+                        <a href="#" class="btn btn-secondary">Zobrazit nabídku</a>
+                    </div>
+                    <div class="hero__dots">
+                        <span class="hero__dot hero__dot--active"></span>
+                        <span class="hero__dot"></span>
+                        <span class="hero__dot"></span>
+                        <span class="hero__dot"></span>
+                        <span class="hero__dot"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         KATEGORIE – 4 dlaždice (na mobilu 2x2, na desktopu 1x4)
+    ============================================================ -->
+    <section class="categories py-4 py-md-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-3 mb-4">
+                    <a href="#" class="category-tile">
+                        <div class="category-tile__img">
+                            <img src="img/cat-zemedelska.jpg" alt="Zemědělská technika">
+                            <span class="category-tile__icon"><i class="fas fa-tractor"></i></span>
+                        </div>
+                        <h3 class="category-tile__label">Zemědělská technika</h3>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <a href="#" class="category-tile">
+                        <div class="category-tile__img">
+                            <img src="img/cat-zahradni.jpg" alt="Zahradní technika">
+                            <span class="category-tile__icon"><i class="fas fa-leaf"></i></span>
+                        </div>
+                        <h3 class="category-tile__label">Zahradní technika</h3>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <a href="#" class="category-tile">
+                        <div class="category-tile__img">
+                            <img src="img/cat-servis.jpg" alt="Servis">
+                            <span class="category-tile__icon"><i class="fas fa-wrench"></i></span>
+                        </div>
+                        <h3 class="category-tile__label">Servis</h3>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <a href="#" class="category-tile">
+                        <div class="category-tile__img">
+                            <img src="img/cat-eshop.jpg" alt="E-shop">
+                            <span class="category-tile__icon"><i class="fas fa-shopping-cart"></i></span>
+                        </div>
+                        <h3 class="category-tile__label">E-shop</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         AKCE A NABÍDKY – 2 horizontální karty
+    ============================================================ -->
+    <section class="section">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Akce a nabídky</h2>
+                <a href="#" class="section__link">
+                    Zobrazit všechny nabídky
+                </a>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-lg-12 mb-4">
+                    <article class="deal-card">
+                        <div class="deal-card__img">
+                            <img src="img/deal-1.jpg" alt="Dotované financování">
+                        </div>
+                        <div class="deal-card__body">
+                            <h3 class="deal-card__title">Dotované financování</h3>
+                            <h3 class="deal-card__subtitle">teleskopických manipulátorů Dieci</h3>
+                            <p class="deal-card__text">Využijte výhodné financování pro rok 2025 s úrokovou sazbou pouze 2,9 % p.a. Tato možnost platí pro nově objednané i objednávané stroje. Při využití podpory v předposlední výši 3,83 % p.a. RPSN.</p>
+                            <a href="#" class="btn btn-secondary">Zobrazit</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-12 mb-4">
+                    <article class="deal-card">
+                        <div class="deal-card__img">
+                            <img src="img/deal-2.jpg" alt="VARES RV 200">
+                        </div>
+                        <div class="deal-card__body">
+                            <h3 class="deal-card__title">VARES RV 200</h3>
+                            <h3 class="deal-card__subtitle">Váš spolehlivý partner pro zimní údržbu</h3>
+                            <p class="deal-card__text">Cenovou výhodný model VARES Rotační posypovače budou často součástí do údržby kraje, ti nově do Designem Hudby vybrané poskytuje výsledných služeb, a zachovaná dostupnost a sjednocenost.</p>
+                            <a href="#" class="btn btn-secondary">Zobrazit</a>
+                        </div>
+                    </article>
+                </div>
+                
+            </div>
+
+            <div class="text-center">
+                <a href="#" class="btn btn-outline-dark">Zobrazit všechny akce a nabídky</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         ČLÁNKY A RECENZE – 2 menší horizontální karty
+    ============================================================ -->
+    <section class="section--gray">
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Články a recenze</h2>
+                <a href="#" class="section__link">
+                    Zobrazit všechny články
+                </a>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-lg-6 mb-4">
+                    <article class="article-card">
+                        <div class="article-card__img">
+                            <img src="img/pottinger.jpg" alt="PÖTTINGER TOP C">
+                        </div>
+                        <div class="article-card__body">
+                            <h3 class="article-card__title">PÖTTINGER TOP C</h3>
+                            <p class="article-card__text">Čtyřrotorový shrnovač se středovým ukládáním řádku.</p>
+                            <a href="#" class="btn btn-secondary btn-sm">Zobrazit</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-12 col-lg-6 mb-4">
+                    <article class="article-card">
+                        <div class="article-card__img">
+                            <img src="img/cat-zahradni.jpg" alt="SECO Crossjet 4x4">
+                        </div>
+                        <div class="article-card__body">
+                            <h3 class="article-card__title">SECO Crossjet 4x4</h3>
+                            <p class="article-card__text">Viktorova rychlá recenze</p>
+                            <a href="#" class="btn btn-secondary btn-sm">Zobrazit</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="#" class="btn btn-outline-dark">Zobrazit všechny články a recenze</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         NEWSLETTER
+    ============================================================ -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6 text-center">
+                    <h3 class="newsletter__title">Přihlaste se k odběru novinek a akcí</h3>
+                    <form class="newsletter__form" action="#" method="post">
+                        <span class="newsletter__icon"><i class="far fa-envelope"></i></span>
+                        <input type="email" name="email" class="form-control newsletter__input" placeholder="Váš e-mail" required>
+                        <button type="submit" class="btn btn-newsletter">Přihlásit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+    ============================================================ -->
+    <footer class="site-footer" id="kontakty">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12 col-md-4 mb-4">
+                    <h5 class="site-footer__heading">Kontakt</h5>
+                    <address class="site-footer__address">
+                        Teleton centroe: <a href="tel:+4205890221">+420 589 02 21</a><br>
+                        Email centrála: <a class="site-footer-mail" href="mailto:info@agrozet.cz">info@agrozet.cz</a><br>
+                        Email e-shop: <a class="site-footer-mail" href="mailto:eshop@agrozet.cz">eshop@agrozet.cz</a><br>
+
+                        <a class="site-footer-mail" href="#">Kontakty a pobočky</a><br>
+                        <br>
+                        AGROZET České Budějovice, a.s.<br>
+                        U Sirkárny 501/30<br>
+                        370 04 České Budějovice<br>
+                        Česká republika
+                    </address>
+                    <div class="site-footer__social mt-3">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 mb-4">
+                    <h5 class="site-footer__heading">Užitečné odkazy</h5>
+                    <ul class="site-footer__links list-unstyled">
+                        <li><a href="#">Obchodní podmínky</a></li>
+                        <li><a href="#">Zásady ochrany osobních údajů</a></li>
+                        <li><a href="#">(GDPR)</a></li>
+                        <li><a href="#">Doprava</a></li>
+                        <li><a href="#">Dodání zboží</a></li>
+                        <li><a href="#">Způsob platby</a></li>
+                        <li><a href="#">Odstoupení od kupní</a></li>
+                        <li><a href="#">smlouvy</a></li>
+                        <li><a href="#">Reklamace zboží</a></li>
+                        <li><a href="#">Dárkové poukazy</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-4 mb-4 text-md-right">
+                    <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem;">
+                        <img src="img/heureka.png" alt="heureka overeno zakazniky" class="site-footer__heureka">
+                        <div class="site-footer__certs">
+                            <div style="display: flex; flex-direction: column; align-items: center;">
+                                <img src="img/tuv.jpg" alt="TÜV certifikát">
+                                <span class="download-cert">stáhnout certifikát</span>
+                            </div>
+                            <img src="img/zscr.png" alt="zemedelsky svaz">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="site-footer__divider">
+            <p class="site-footer__copy text-center mb-0">© 2026 Agrozet Czech Machinery a.s. Všechna práva vyhrazena.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="bootstrap-4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

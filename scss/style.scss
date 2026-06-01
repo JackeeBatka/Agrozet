@@ -1,0 +1,1028 @@
+// ============================================================
+// PROMĚNNÉ – přepíší Bootstrap defaults (musí být PŘED importem)
+// ============================================================
+
+$secondary:             #FCCA13;      // žlutá – tlačítka, akcenty
+$primary:               #18293B;       // tmavě modrá – navbar, header
+$primary-light:         #0F1B29;   // footer = stejně tmavá modrá
+$light:                 #f4f4f4;
+$body-color:            #2b2b2b;
+
+$font-family-sans-serif: 'Nunito Sans', sans-serif;
+$font-size-base:         0.9375rem;   // 15px
+$line-height-base:       1.55;
+$headings-font-weight:   800;
+
+$border-radius:          4px;
+$border-radius-lg:       6px;
+$border-radius-sm:       3px;
+
+$btn-font-weight:        700;
+$btn-padding-x:          1.5rem;
+$btn-padding-y:          0.55rem;
+$btn-padding-x-sm:       1rem;
+$btn-padding-y-sm:       0.35rem;
+
+$navbar-padding-y:       0;
+$navbar-nav-link-padding-x: 1rem;
+$navbar-dark-color:                  #fff;
+$navbar-dark-hover-color:            $secondary;
+$navbar-dark-active-color:           $secondary;
+
+$input-border-radius:    50rem;       // pill (zaoblený search)
+$input-padding-x:        1.25rem;
+
+$transition-base:        all .2s ease-in-out;
+$footer:                 #0F1B29;
+
+// ============================================================
+// BOOTSTRAP IMPORT
+// ============================================================
+
+@import "../bootstrap-4.6.2/scss/bootstrap";
+
+// ============================================================
+// GLOBÁLNÍ
+// ============================================================
+
+body 
+{
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $body-color;
+}
+
+img 
+{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a 
+{
+    transition: $transition-base;
+}
+
+h1, h2, h3, h4, h5, h6 
+{
+    font-weight: 800;
+    color: $primary;
+}
+
+.btn 
+{
+    font-weight: 600;
+    padding: 0.55rem 1.5rem;
+    border-radius: 30px;
+    max-height: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-sm 
+{
+    padding: 0.35rem 1rem;
+}
+
+.btn-secondary 
+{
+    background-color: $secondary;
+    border-color: $secondary;
+    color: $primary;
+
+    &:hover, &:focus, &:active, &:not(:disabled):not(.disabled):active 
+    {
+        background-color: darken($secondary, 8%);
+        border-color: darken($secondary, 8%);
+        color: $primary;
+        box-shadow: none;
+    }
+}
+
+.btn-newsletter 
+{
+    background-color: $secondary;
+    border-color: $secondary;
+    color: $primary;
+    font-weight: 600;
+    padding: 0.55rem 1.5rem;
+    border-radius: 30px;
+    max-height: 35px;
+    justify-content: center;
+    display: inline-flex;
+    align-items: center;
+
+    &:hover 
+    {
+        background-color: darken($secondary, 8%);
+        color: $primary;
+    }
+}
+
+.btn-outline-dark 
+{
+    color: $primary;
+    border-color: $primary;
+
+    &:hover 
+    {
+        background-color: $primary;
+        color: #fff;
+    }
+}
+
+// Sekce
+.section 
+{
+    padding-top: 0.2rem;
+    padding-bottom: 2rem;
+
+    &--gray 
+    {
+        background-color: $light;
+        height: 2px;
+    }
+
+    &__header 
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    &__title 
+    {
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin: 0;
+    }
+
+    &__link 
+    {
+        font-size: 0.875rem;
+        font-weight: 700;
+        color: $primary;
+        white-space: nowrap;
+        text-decoration: underline;
+
+        i 
+        { 
+            margin-left: 0.25rem; 
+            font-size: 0.75rem; 
+        }
+
+        &:hover 
+        {
+            color: darken($secondary, 15%);
+            text-decoration: none;
+        }
+    }
+}
+
+@include media-breakpoint-up(md) 
+{
+    .section 
+    { 
+        padding-top: 0.2rem;
+        padding-bottom: 2rem; 
+    }
+    
+    .section__title 
+    { 
+        font-size: 1.75rem; 
+    }
+}
+
+// ============================================================
+// TOPBAR – tenký žlutý pruh
+// ============================================================
+
+.topbar 
+{
+    background-color: $secondary;
+    padding: 0.4rem 0;
+    font-size: 0.8125rem;
+
+    &__links 
+    {
+        a 
+        {
+            color: $primary;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0 0.5rem;
+            display: inline-block;
+
+            &:hover 
+            { 
+                color: #000; 
+            }
+        }
+
+        .list-inline-item:not(:last-child) a 
+        {
+            border-right: 1px solid rgba($primary, .25);
+        }
+    }
+}
+
+// ============================================================
+// HEADER – tmavě modrý
+// ============================================================
+
+.site-header 
+{
+    background-color: $primary;
+    color: #fff;
+    padding: 1rem 0;
+
+    &__logo 
+    {
+        display: inline-block;
+        text-decoration: none;
+        line-height: 1;
+
+        &:hover 
+        { 
+            text-decoration: none; 
+        }
+    }
+
+    &__logo-name 
+    {
+        display: block;
+        font-size: 1.75rem;
+        font-weight: 900;
+        font-style: italic;
+        color: $secondary;
+        letter-spacing: -1px;
+    }
+
+    &__logo-tag 
+    {
+        display: block;
+        font-size: 0.6875rem;
+        color: rgba(#fff, .8);
+        margin-top: 2px;
+        font-weight: 600;
+    }
+
+    &__icon 
+    {
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.875rem;
+        font-weight: 600;
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
+        padding: 0 20px;
+
+        i 
+        { 
+            font-size: 1rem; 
+            margin-right: 0.35rem;
+            display: inline-flex;
+            align-items: center;
+            vertical-align: middle;
+            color: $secondary;
+        }
+
+        &:hover 
+        {
+            color: $secondary;
+            text-decoration: none;
+        }
+    }
+
+    &__search 
+    {
+        display: flex;
+        background: #fff;
+        border-radius: 50rem;
+        padding: 4px;
+        max-width: 560px;
+        margin: 0 auto;
+
+        .form-control 
+        {
+            border: 0;
+            background: transparent;
+            padding-left: 1.25rem;
+            box-shadow: none !important;
+            max-height: 35px;
+
+            &:focus 
+            { 
+                background: transparent; 
+                outline: none;
+            }
+        }
+
+        .btn 
+        {
+            border-radius: 50rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+    }
+}
+
+.logo-img 
+{
+    height: 50px;
+}
+
+// ============================================================
+// NAVIGACE – tmavě modrá s žlutými ikonkami
+// ============================================================
+
+.site-nav 
+{
+    background-color: $primary;
+    border-top: 1px solid rgba(#fff, .08);
+    padding: 0;
+
+    .nav-link 
+    {
+        display: flex !important;
+        align-items: center;
+        font-weight: 600;
+        font-size: 0.875rem;
+        padding: 0.85rem 1rem !important;
+        color: #fff !important;
+
+        &:hover 
+        { 
+            color: $secondary !important; 
+        }
+
+        &:hover, &:focus 
+        {
+            .site-nav__bullet 
+            {
+                background: $secondary;
+                color: $primary;
+
+                i 
+                {
+                    color: $primary;
+                }
+            }
+        }
+    }
+
+    &__bullet 
+    {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: transparent;
+        color: $secondary;
+        font-size: 0.95rem;
+        margin-right: 0.45rem;
+        flex-shrink: 0;
+        transition: background 0.2s, color 0.2s;
+
+        i 
+        { 
+            color: $secondary;
+        }
+    }
+
+    .navbar-toggler 
+    {
+        margin: 0.5rem 0;
+        border-color: rgba(#fff, .25);
+    }
+}
+
+// ============================================================
+// HERO
+// ============================================================
+
+.hero 
+{
+    position: relative;
+
+    &__bg 
+    {
+        position: relative;
+        min-height: 380px;
+        background:
+            linear-gradient(to right, rgba(#000, .15), rgba(#000, .05)),
+            url('../img/hero-bg.jpg') center/cover no-repeat,
+            #2d5a1b;
+        display: flex;
+        align-items: center;
+        padding-bottom: 1rem;
+        padding-top: 13rem;
+    }
+
+    &__panel 
+    {
+        background: $primary;
+        color: #fff;
+        padding: 1.5rem 2rem;
+        border-radius: 15px 15px 130px 15px;
+        max-width: 420px;
+        margin-left: -15px;
+        position: relative;
+        margin-bottom: 2rem;
+    }
+
+    &__title 
+    {
+        color: $secondary;
+        font-size: 1.75rem;
+        font-weight: 750;
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.5px;
+    }
+
+    &__subtitle 
+    {
+        color: #fff;
+        font-size: 1rem;
+        margin-bottom: 1.25rem;
+    }
+
+    &__inner 
+    {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__dots 
+    {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        align-items: end;
+        padding-bottom: 2rem;
+    }
+
+    &__dot 
+    {
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        background: $light;
+        border: 1px solid rgba($primary, .3);
+        cursor: pointer;
+        transition: $transition-base;
+
+        &--active 
+        {
+            background: $secondary;
+            transform: scale(1.05);
+        }
+    }
+}
+
+@include media-breakpoint-up(md) 
+{
+    .hero__bg 
+    { 
+        min-height: auto; 
+        padding-top: 13rem;
+        padding-bottom: 1rem; 
+    }
+    
+    .hero__panel 
+    {
+        padding: 2rem 3rem;
+        max-width: 600px;
+    }
+    
+    .hero__title 
+    { 
+        font-size: 2.8rem; 
+    }
+    
+    .hero__subtitle 
+    { 
+        font-size: 1.8rem; 
+    }
+}
+
+// ============================================================
+// KATEGORIE
+// ============================================================
+
+.categories 
+{
+    padding-top: 3rem !important;
+    padding-bottom: 0.1rem !important;
+    border-bottom: 1px solid rgba($primary, 0.1);
+}
+
+.category-tile 
+{
+    display: block;
+    text-decoration: none;
+    color: $primary;
+
+    &:hover 
+    {
+        text-decoration: none;
+        color: $primary;
+
+        .category-tile__img img 
+        { 
+            transform: scale(1.05); 
+        }
+    }
+
+    &__img 
+    {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        margin-bottom: 0.75rem;
+        background: #ddd;
+
+        img 
+        {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            transition: transform .4s ease;
+        }
+    }
+
+    &__icon 
+    {
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        width: 60px;
+        height: 60px;
+        border-radius: 0px 0px 0px 20px;
+        background: $secondary;
+        color: $primary;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        box-shadow: 0 2px 8px rgba(#000, .2);
+    }
+
+    &__label 
+    {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin: 0;
+        text-align: left;
+    }
+}
+
+// ============================================================
+// DEAL CARD (akce a nabídky) – horizontální
+// ============================================================
+
+.deal-card 
+{
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    overflow: hidden;
+    height: 100%;
+
+    &__img 
+    {
+        display: flex;
+        flex-shrink: 0;
+        background: #fff;
+        border-radius: 15px 15px 150px 15px;
+
+        img 
+        {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 16 / 6;
+            object-fit: cover;
+            border-radius: 15px 15px 150px 15px;
+        }
+    }
+
+    &__body 
+    {
+        padding: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding-top: 0px;
+    }
+
+    &__title 
+    {
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
+    }
+    
+    &__subtitle 
+    {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+    }
+
+    &__text 
+    {
+        font-size: 0.875rem;
+        color: #5a5a5a;
+        flex: 1;
+        margin-bottom: 3rem;
+    }
+
+    .btn 
+    { 
+        align-self: flex-start; 
+    }
+}
+
+@include media-breakpoint-up(sm) 
+{
+    .deal-card 
+    {
+        flex-direction: row;
+        align-items: stretch;
+        padding-bottom: 2rem;
+
+        &__img 
+        {
+            width: 50%;
+            max-height: 250px;
+            border-radius: 15px 15px 150px 15px;
+            overflow: hidden;
+            flex-shrink: 0;
+
+            img 
+            { 
+                height: 100%; 
+                width: 100%;
+                object-fit: cover;
+                aspect-ratio: auto; 
+            }
+        }
+
+        &__body 
+        { 
+            width: 45%; 
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-width: 0;
+            padding-top: 0px;
+        }
+        
+        .btn 
+        {
+            margin-top: auto;
+            align-self: flex-start;
+        }
+    }
+}
+
+// ============================================================
+// ARTICLE CARD (články a recenze) – menší horizontální
+// ============================================================
+
+.article-card 
+{
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 100%;
+
+    &__img 
+    {
+        flex-shrink: 0;
+        background: #ddd;
+        border-radius: 12px;
+        margin: 8px;
+        overflow: hidden;
+
+        img 
+        {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+    }
+
+    &__body 
+    {
+        padding: 1rem 1.25rem;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    &__title 
+    {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 0.35rem;
+    }
+
+    &__text 
+    {
+        font-size: 1.1rem;
+        color: #000;
+        flex: 1;
+        margin-bottom: 0.75rem;
+        font-weight: 510;
+    }
+
+    .btn 
+    { 
+        align-self: flex-start; 
+    }
+}
+
+@include media-breakpoint-up(sm) 
+{
+    .article-card 
+    {
+        flex-direction: row;
+        align-items: stretch;
+
+        &__img 
+        {
+            width: 38%;
+            
+            img 
+            {
+                height: 100%; 
+                aspect-ratio: auto;
+            }
+        }
+
+        &__body 
+        { 
+            width: 62%; 
+        }
+    }
+}
+
+// ============================================================
+// NEWSLETTER
+// ============================================================
+
+.newsletter 
+{
+    background-color: $footer;
+    padding: 3rem 0;
+    color: #fff;
+
+    &__title 
+    {
+        font-weight: 800;
+        margin-bottom: 1.25rem;
+        font-size: 1.25rem;
+    }
+
+    &__form 
+    {
+        display: flex;
+        background: #fff;
+        border-radius: 50rem;
+        padding: 4px;
+        max-width: 700px;
+        margin: 0 auto;
+        max-height: 40px;
+        align-items: center;
+
+        .form-control 
+        {
+            border: 0;
+            background: transparent;
+            box-shadow: none !important;
+        }
+
+        .btn 
+        {
+            border-radius: 50rem;
+            white-space: nowrap;
+        }
+    }
+    
+    &__icon 
+    {
+        display: inline-flex;
+        align-items: center;
+        padding-left: 0.85rem;
+        color: #aaa;
+        font-size: 0.9rem;
+        flex-shrink: 0;
+    }
+
+    &__input 
+    {
+        padding-left: 0.4rem !important;
+    }
+}
+
+@include media-breakpoint-up(md) 
+{
+    .newsletter__title 
+    { 
+        font-size: 1.5rem; 
+        color: #fff;
+        font-weight: 550;
+    }
+}
+
+// ============================================================
+// FOOTER
+// ============================================================
+
+.site-footer 
+{
+    background-color: $primary;
+    color: rgba(#fff, .75);
+    padding: 3rem 0 1.5rem;
+
+    a 
+    {
+        color: rgba(#fff, .65);
+        text-decoration: none;
+
+        &:hover 
+        {
+            color: $secondary;
+            text-decoration: none;
+        }
+    }
+    
+    &-mail 
+    {
+        color: rgba(#fff, .65);
+        text-decoration: underline !important; 
+    }
+
+    &__heading 
+    {
+        color: #fff;
+        font-weight: 800;
+        font-size: 0.9375rem;
+        text-transform: uppercase;
+        letter-spacing: .05em;
+        margin-bottom: 1rem;
+    }
+
+    &__address 
+    {
+        font-size: 0.875rem;
+        font-style: normal;
+        line-height: 1.8;
+    }
+
+    &__links li 
+    {
+        margin-bottom: 0.4rem;
+        font-size: 0.875rem;
+    }
+
+    &__social 
+    {
+        display: flex;
+        gap: 1.5rem;
+
+        a 
+        {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: $primary;
+            font-size: 2rem;
+
+            &:hover 
+            {
+                background: $secondary;
+                color: $primary;
+            }
+        }
+    }
+
+    &__brand 
+    {
+        font-size: 1.75rem;
+        font-weight: 900;
+        font-style: italic;
+        color: $secondary;
+        letter-spacing: -1px;
+    }
+
+    &__cert 
+    {
+        max-width: 110px;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    &__divider 
+    {
+        border-color: rgba(#fff, .1);
+        margin: 1.5rem 0 1rem;
+    }
+
+    &__copy 
+    {
+        font-size: 0.8125rem;
+        color: rgba(#fff, .4);
+    }
+    
+    &__heureka 
+    {
+        width: 277px;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        padding-bottom: 1.2rem;
+    }
+
+    &__certs 
+    {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 1.5rem;
+        margin-top: 0.5rem;
+        
+        img 
+        {
+            width: 120px;
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            background: none;
+            box-shadow: none;
+            border-radius: 0;
+        }
+    }
+}
+
+.download-cert 
+{
+    font-size: inherit;
+    color: rgba(#fff, .65);
+    margin-top: 0.25rem;
+    
+    &:hover 
+    {
+        color: $secondary;
+    }
+}
+
+@include media-breakpoint-down(sm) 
+{
+    .site-footer 
+    {
+        text-align: center;
+
+        &__social 
+        { 
+            justify-content: center; 
+        }
+        
+        &__cert 
+        { 
+            margin: 0 auto; 
+        }
+        
+        &__certs 
+        {
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            
+            img 
+            {
+                width: 90px;
+            }
+        }
+    }
+}
